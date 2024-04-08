@@ -10,14 +10,14 @@ class TodoService
     public function getAllTodos()
     {
         $todos = Todo::orderBy('created_at', 'desc')->get();
-    
+
         if ($todos->isEmpty()) {
-            return "Todo list not found";
+            return ["message" => "Todo list not found"];
         }
     
         return $todos;
     }
-    
+
     public function createTodo(array $data)
     {
         $todo = Todo::create($data);

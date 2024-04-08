@@ -6,7 +6,9 @@
 
 import './bootstrap';
 import { createApp } from 'vue';
-
+import App from './App.vue';
+import { VueQueryPlugin } from "@tanstack/vue-query";
+import { createPinia } from "pinia";
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -14,16 +16,19 @@ import { createApp } from 'vue';
  */
 
 const app = createApp({});
+const pinia = createPinia();
+// const app = createApp(App);
+app.use(pinia);
+app.use(VueQueryPlugin);
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+app.component('app', App);
 
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
  *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * Eg. ./components/app.vue -> <example-component></example-component>
  */
 
 // Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {

@@ -15,7 +15,7 @@
 <body class="antialiased">
     <div id="app">
         <!-- Include your Vue component here -->
-        <example-component></example-component>
+        <app></app>
     </div>
 
     <!-- Scripts -->

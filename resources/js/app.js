@@ -4,9 +4,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import './bootstrap';
-import { createApp } from 'vue';
-import App from './App.vue';
+import "./bootstrap";
+import { createApp } from "vue";
+import App from "./App.vue";
 import { VueQueryPlugin } from "@tanstack/vue-query";
 import { createPinia } from "pinia";
 /**
@@ -21,7 +21,7 @@ const pinia = createPinia();
 app.use(pinia);
 app.use(VueQueryPlugin);
 
-app.component('app', App);
+app.component("app", App);
 
 /**
  * The following block of code may be used to automatically register your
@@ -41,4 +41,4 @@ app.component('app', App);
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
 
-app.mount('#app');
+app.mount("#app");
